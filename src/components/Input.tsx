@@ -15,7 +15,12 @@ export const Input = (props: propsType) => {
         setError(true)
     }
     const onChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
-        if (!e.currentTarget.value.trim()) return
+        debugger
+        if (!e.currentTarget.value.trim()) {
+            setTitle(e.currentTarget.value.trim())
+            setError(true)
+            return
+        }
         setError(false)
         setTitle(e.currentTarget.value.trim())
 

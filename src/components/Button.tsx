@@ -10,15 +10,8 @@ type propsType = {
 }
 
 export const Button = (props:propsType) => {
-    const changeFilter = (valueFilter: filterType) => {
-        props.changeFilter(valueFilter)
-    }
 
-    let activeButton = "";
-    if (props.name === props.valueFilter)activeButton = style.activeFilter
-    else if ((props.name === props.valueFilter))activeButton = style.activeFilter
-    else if ((props.name === props.valueFilter))activeButton = style.activeFilter
     return (
-        <button className={activeButton} onClick={() => props.changeFilter(props.name)}>{props.title}</button>
+        <button className={props.name === props.valueFilter ? style.activeFilter : ""} onClick={() => props.changeFilter(props.name)}>{props.title}</button>
     )
 }
